@@ -1,0 +1,23 @@
+[package]
+name = "ic-pdf-view"
+version = "0.1.0"
+edition = "2021"
+description = "Shows documents page by page when a file is opened for viewing"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+ic-plugin-api = { workspace = true }
+serde_json = { workspace = true }
+pdfium-render = "0.9.2"
+image = { version = "0.25", default-features = false, features = ["png"] }
+
+[dev-dependencies]
+ic-plugin-api = { workspace = true, features = ["testing"] }
+
+[features]
+default = ["export-abi"]
+export-abi = []
